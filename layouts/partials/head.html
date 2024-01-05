@@ -1,0 +1,34 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <title>
+    {{ block "title" . }}
+    {{ if .IsHome }}
+      {{ .Site.Title }}
+    {{ else if .Title }}
+      {{ .Title }} | {{ .Site.Title }}
+    {{ else }}
+      {{ .Summary | plainify | truncate 40 }} | {{ .Site.Title }}
+    {{ end }}
+    {{ end }}
+  </title>
+  {{ with .Title }}
+  <meta property="og:title" content="{{ . }}">
+  {{ else }}
+  <meta property="og:title" content="{{ .Site.Title }}">
+  {{ end }}
+  {{ if .IsHome }}
+  <meta name="og:description" content="{{ .Site.Params.itunes_description | truncate 60 }}">
+  <meta name="description" content="{{ .Site.Params.itunes_description }}">
+  <meta property="og:image" content="{{ .Site.Author.avatar }}">
+  {{ else }}
+  <meta name="og:description" content="{{ .Summary | truncate 60 }}">
+  <meta name="description" content="{{ .Summary }}">
+  {{ end }}
+  {{ range .Params.photos }}
+  <meta property="og:image" content="{{ . }}">
+  {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="stylesheet" href="{{ "css/tyylit.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
+  {{ partial "microblog_head.html" . }}
+</head>

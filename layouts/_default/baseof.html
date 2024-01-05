@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="fi">
+{{ partial "head.html" . }}
+<body>
+  {{ block "main" . }}{{ end }}
+  {{ range .Site.Params.plugins_js }}
+  <script src="{{ . }}"></script>
+  {{ end }}
+</body>
+</html>
