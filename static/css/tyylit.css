@@ -70,3 +70,72 @@ sup,
 .small {
   font-size: 0.9em;
 }
+
+/* Header and footer */
+.site-header {
+
+}
+.site-meta {
+
+}
+.site-title {
+
+}
+.site-description {
+
+}
+.site-nav {
+
+}
+.page-link {
+
+}
+.site-footer {
+
+}
+
+/* Home page posts listing */
+
+.posts.h-feed {
+
+}
+
+.post-preview.h-entry {
+
+}
+
+.post-preview.h-entry .post-title {
+
+}
+
+.post-preview.h-entry .post-date {
+
+}
+
+.post-preview.h-entry .e-content {
+
+}
+
+/* Sidebar */
+
+.sidebar {
+
+}
+/* Posts and pages */
+
+.post.h-entry .post-title{
+
+}
+
+.post.h-entry .post-date {
+
+}
+
+.post.h-entry .post-content {
+
+}
+
+/* Comments */
+.conversation {
+
+}
