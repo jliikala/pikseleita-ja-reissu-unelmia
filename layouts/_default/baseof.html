@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fi">
 {{ partial "head.html" . }}
-<body>
+<body {{ if .IsHome }}class="home"{{ end }}>
   {{ block "main" . }}{{ end }}
   {{ range .Site.Params.plugins_js }}
   <script src="{{ . }}"></script>

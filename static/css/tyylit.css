@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Cartridge";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/Cartridge-Regular.otf") format("opentype"),
+    url("/fonts/Cartridge-Regular.woff2") format("woff2"),
+    url("/fonts/Cartridge-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cartridge";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/Cartridge-Bold.otf") format("opentype"),
+    url("/fonts/Cartridge-Bold.woff2") format("woff2"),
+    url("/fonts/Cartridge-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+
 :root {
 	--teksti: #000000;
 	--linkit: #0369c1;
