@@ -69,10 +69,12 @@ body {
   line-height: 1.5;
 }
 
-img, picture, video, canvas, svg {
+figure, img, picture, video, canvas, svg, .h-entry figure img, .h-entry img {
   display: block;
   max-width: 100%;
   height: auto;
+	margin: 0;
+	margin-bottom: 2rem;
 }
 
 input, button, textarea, select {
@@ -81,10 +83,11 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+	margin-top: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: var(--font-stack-sans);
+	font-family: var(--font-stack-titles);
 }
 
 b, strong {
@@ -121,31 +124,51 @@ body {
   font-weight: 400;
   min-height: 100%;
   font-size: 1.6rem;
-	background-color: var(--bg-light);
+	background-color: var(--tausta);
 }
 
 .container {
 	width: 100%;
 	max-width: 1140px;
-	padding: 1 em;
+	padding: 0 6em;
 	background: #fff;
+	margin: 0 auto;
 }
 
 .main-content {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
+	gap: 5%;
+}
+
+.main-content .posts-list {
+	width: 75%;
+}
+
+.main-content .sidebar {
+	width: 20%;
 }
 
 /* Header and footer */
+
+.site-header {
+	margin: 0 auto 3em;
+  padding: 3em 1.5em 3rem 1.5em;
+  border-bottom: 1px solid #423a2a;
+	display: flex;
+	justify-content: space-between;
+}
+
 .site-header, .site-meta {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	gap: 1rem;
 }
 
 .site-meta {
 	text-decoration: none;
 	align-items: center;
+	line-height: 1.4;
 }
 
 .site-meta .profile-photo{
@@ -153,16 +176,18 @@ body {
 	height: auto;
 }
 .site-meta h1 {
-	font-size: 0.8rem;
 	font-weight: bold;
+	font-size: 1.5rem;
+	margin: 0;
 }
 
 .site-description {
-	font-size: 0.8rem;
+	font-size: 1.5rem;
 }
 
 .site-meta a {
 	text-decoration: none;
+	color: inherit;
 }
 
 .site-nav {
@@ -172,7 +197,7 @@ body {
 .site-nav ul li {
 	display: inline;
 	margin-left: 1em;
-	font-size: .75em;
+	font-size: .85em;
 }
 
 .site-nav a {
@@ -186,15 +211,14 @@ body {
 
 /* Home page posts listing */
 
-.posts.h-feed {
-	display: flex;
-	flex-direction: column;
+.post-list {
+	list-style: none;
+	padding: 0;
 }
 
 .post-preview.h-entry {
 	display: flex;
-	flex-direction: column;
-	flex: 0 0 80%;
+	gap: 4rem;
 }
 
 .posts.h-feed .sidebar {
@@ -217,7 +241,7 @@ body {
 
 .post-preview.h-entry .post-title a {
 	text-decoration: none;
-	columns: var(--teksti);
+	color: var(--teksti);
 }
 
 .post-preview.h-entry .post-title a:hover {
@@ -227,6 +251,9 @@ body {
 
 .post-preview.h-entry .post-date {
 	font-family: var(--font-stack-mono);
+	color: inherit;
+	text-decoration: none;
+	font-size: 0.85em;
 }
 
 /* Sidebar */
