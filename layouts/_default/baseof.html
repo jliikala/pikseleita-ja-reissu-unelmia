@@ -2,7 +2,13 @@
 <html lang="fi">
 {{ partial "head.html" . }}
 <body {{ if .IsHome }}class="home"{{ end }}>
-  {{ block "main" . }}{{ end }}
+  <div class="container">
+    {{ partial "header.html" . }}
+    <div class="main-content">
+      {{ block "main" . }}{{ end }}
+    </div>
+    {{ partial "footer.html" . }}
+  </div>
   {{ range .Site.Params.plugins_js }}
   <script src="{{ . }}"></script>
   {{ end }}
