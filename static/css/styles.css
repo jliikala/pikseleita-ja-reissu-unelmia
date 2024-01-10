@@ -1,0 +1,383 @@
+@font-face {
+  font-family: "Cartridge";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/Cartridge-Regular.otf") format("opentype"),
+    url("/fonts/Cartridge-Regular.woff2") format("woff2"),
+    url("/fonts/Cartridge-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cartridge";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/Cartridge-Bold.otf") format("opentype"),
+    url("/fonts/Cartridge-Bold.woff2") format("woff2"),
+    url("/fonts/Cartridge-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "iA Writer Mono";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/iAWriterMonoS-Regular.eot") format("embedded-opentype"),
+    url("/fonts/iAWriterMonoS-Regular.woff2") format("woff2"),
+    url("/fonts/iAWriterMonoS-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+
+:root {
+	--text: #162622;
+	--links: #e13f20;
+	--links-visited: #6496c1;
+	--bg-color: #f5f4f2;
+	--font-stack-mono: "iA Writer Mono", monospace;
+  --font-stack-sans: "Avenir Next", Avenir, "-apple-system", BlinkMacSystemFont, "helvetica neue", Helvetica, Arial, sans-serif;
+	--font-stack-titles: Cartridge, var(--font-stack-sans);
+	--border-color: #ddd;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text: #b9bfc6;
+		--links: #72A9D4;
+		--links-visited: #7a9bb7;
+		--bg-color: #111920;
+	}
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+	overflow-y: scroll;
+	min-height: 100%;
+}
+
+html, body {
+  height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+	width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-stack-sans);
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+a {
+	color: var(--links);
+}
+
+em {
+  font-style: italic;
+}
+
+time {
+	font-family: var(--font-stack-mono);
+}
+
+small,
+sub,
+sup,
+.small {
+  font-size: 0.9em;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-y: scroll;
+	font-family: var(--font-stack-sans);
+}
+
+body {
+	line-height: 1.8;
+  font-weight: 400;
+  min-height: 100%;
+  font-size: 1.6rem;
+	background-color: var(--bg-color);
+}
+
+.container {
+	width: 100%;
+	max-width: 71.25em;
+	margin: 0 auto;
+	padding: 0 1em 3em;
+	background: #fff;
+	border: 1px solid var(--border-color);
+}
+
+@media (max-width: 61.25em) {
+	.container {
+		border-left-width: 0;
+  	border-right-width: 0;
+	}
+}
+
+.main-content {
+}
+
+/* Header and footer */
+.site-header, .site-meta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.site-header {
+	border-bottom: 1px solid var(--border-color);
+	margin-bottom: 6rem;
+	padding-top: 2rem;
+	padding-bottom: 3rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	width: 100%;
+  max-width: 59.25em;
+  margin: 0 auto 5em;
+}
+
+@media (max-width: 45em) {
+  .site-header {
+    margin-bottom: 3em;
+    padding: 1em 0 3em;
+  }
+}
+
+.site-meta {
+	text-decoration: none;
+	align-items: center;
+	gap: 2rem;
+}
+
+.site-meta .profile-photo{
+	width: 50px;
+	height: auto;
+}
+.site-meta h1 {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	margin: 0;
+	line-height: 1.7;
+}
+
+.site-meta div {
+	line-height: 1;
+}
+
+.site-description {
+	font-size: 0.85em;
+}
+
+.site-meta a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.site-nav {
+	text-transform: uppercase;
+	margin-left: auto;
+}
+
+.site-nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav ul li {
+	display: inline;
+	margin-left: 1em;
+  font-size: .9em;
+}
+
+@media (max-width: 45em) {
+  .site-nav ul li {
+    display: block;
+    line-height: 2em;
+		margin-left: 0;
+  }
+}
+
+.site-nav a {
+	text-decoration: none;
+	border-bottom: 2px solid var(--links);
+}
+
+.site-footer {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-top: 1px solid var(--border-color);
+	margin-top: 6rem;
+}
+
+.site-footer .profile_photo {
+	width: 50px;
+	height: 50px;
+}
+
+/* Home page posts listing */
+
+.post-list {
+	list-style: none;
+	padding: 0;
+}
+
+.post-list article.h-entry {
+	display: grid;
+  grid-template-columns: 11.25em 29.25em;
+  column-gap: 3.75em;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". .";
+	margin-bottom: 3em;
+}
+
+@media (max-width: 61.25em) {
+  .post-list article.h-entry {
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr;
+    grid-template-areas: ".";
+  }
+}
+
+.post-list .h-entry .u-url {
+	flex: 0 0 20%;
+}
+
+.post-list .h-entry .e-content {
+	flex: 1;
+}
+
+.e-content p:first-of-type {
+	margin-top: 0;
+}
+
+.post-list .h-entry .post-meta {
+	flex: 0 0 30%;
+}
+
+.post-list .h-entry h2 {
+	font-size: 1.65em;
+	font-family: var(--font-stack-titles);
+	margin-top: 0;
+	margin-bottom: .5em;
+  font-weight: normal;
+  font-size: 1.75em;
+  line-height: 1.3333em;
+}
+
+.post-list .h-entry .post-meta a {
+	text-decoration: none;
+	color: var(--text);
+}
+
+.post-list .h-entry .post-meta a:hover {
+	color: var(--links);
+	text-decoration: underline;
+}
+
+.post-meta time {
+	font-family: var(--font-stack-mono);
+	text-transform: uppercase;
+	font-size: 0.85em;
+}
+
+.page-container {
+	display: grid;
+  grid-template-columns: 50.25em 8.313em;
+  grid-template-rows: 1fr;
+  gap: .75em;
+  grid-template-areas: '. .';
+  width: 100%;
+  max-width: 948px;
+  margin: 0 auto;
+}
+
+@media (max-width: 61.25em) {
+  .page-container {
+    grid-template-columns: minmax(11.25em, 44.25em) 8.3125em;
+    column-gap: 6.8125em;
+  }
+}
+
+@media (max-width: 30em) {
+  .page-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr;
+    gap: .75em;
+    grid-template-areas: ".";
+  }
+}
+
+.h-feed {
+	width: 44.25em;
+	position: relative;
+}
+
+@media (max-width: 61.25em) {
+  .h-feed {
+    position: relative;
+    max-width: 44.25em;
+    width: 100%;
+  }
+}
+
+/* Sidebar */
+
+.main-content .sidebar {
+	font-size: 80%;
+	display: block;
+}
+
+/* Posts and pages */
+
+.post.h-entry .post-title {
+	font-size: 1.75em;
+	margin-bottom: .5em;
+	line-height: 1.33em;
+}
+
+.post.h-entry .post-date {
+
+}
+
+.post.h-entry .post-content {
+
+}
+
+/* Comments */
+.conversation {
+
+}
